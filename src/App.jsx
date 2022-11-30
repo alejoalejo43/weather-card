@@ -53,7 +53,7 @@ function App() {
         <WeatherCard
           weather={weather}
           temperature={temperature}
-          chahgeUnitTemperature={changeUnitTemperature}
+          changeUnitTemperature={changeUnitTemperature}
           isCelsius={isCelsius}
         />
       ) : (

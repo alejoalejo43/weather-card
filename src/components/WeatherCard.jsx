@@ -3,15 +3,15 @@ import React from 'react';
 const WeatherCard = ({
   weather,
   temperature,
-  isCelsious,
+  isCelsius,
   changeUnitTemperature,
 }) => {
   console.log(weather);
   return (
-    <article>
+    <article className="weatherCard">
       <h1>Weather App</h1>
       <h3>{`${weather.name}, ${weather.sys.country}`}</h3>
-      <section>
+      <section className="weatherCard-body">
         <div>
           <img
             src={`https://openweathermap.org/img/wn/${weather.weather[0]?.icon}@4x.png`}
@@ -26,13 +26,15 @@ const WeatherCard = ({
         </ul>
       </section>
 
-      <p>
-        {isCelsious
+      <p className="temperature-display">
+        {isCelsius
           ? `${temperature?.celsius} °C`
           : `${temperature?.fahrenheit} °F`}
       </p>
-      <p>??{typeof changeUnitTemperature}</p>
-      <button onClick={changeUnitTemperature}>Degrees °F/°C</button>
+
+      <button className="weatherCard-button" onClick={changeUnitTemperature}>
+        Degrees °F/°C
+      </button>
     </article>
   );
 };
