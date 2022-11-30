@@ -19,7 +19,7 @@ function App() {
   //console.log('me renderizo');
   const changeUnitTemperature = () => setIsCelsius(!isCelsius);
   //const changeUnitTemperature = () => setIsCelsius(false);
-  console.log(`type of ${typeof changeUnitTemperature}`);
+  //console.log(`type of ${typeof changeUnitTemperature}`);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);
   }, []);
@@ -31,7 +31,7 @@ function App() {
       axios
         .get(URL)
         .then((res) => {
-          // console.log(res.data);
+          console.log(res.data);
           const tempkelvin = res.data.main.temp;
           const tempCelsius = (tempkelvin - 273.15).toFixed(1);
           const tempFahrenheit = ((tempCelsius * 9) / 5 + 32).toFixed(1);
@@ -57,7 +57,7 @@ function App() {
           isCelsius={isCelsius}
         />
       ) : (
-        <p>Loaging...</p>
+        <p>Loading...</p>
       )}
     </div>
   );
